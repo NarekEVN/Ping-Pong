@@ -11,6 +11,8 @@ class Game{
 		this.ballY = 250;
 		this.ballMoveX = -10;
 		this.ballMoveY = 0;
+		this.bg = new Image();
+		this.bg.src = "19231_space-game-background.jpg";
 		this.sound = new Audio('pong.mp3');
 		this.tableSound = new Audio('pong1.mp3');
 		this.fail = new Audio('Powerup5.wav');
@@ -111,8 +113,10 @@ class Game{
 	show(){
 		// Background
 		Game.ctx.beginPath();
-		Game.ctx.fillStyle = "black";
+		Game.ctx.fillStyle = "#0f0f0f";
 		Game.ctx.fillRect(0, 0, 1000, 500)
+
+		// Game.ctx.drawImage(this.bg,0,0, 1000, 500);
 
 		//Center Line
 
@@ -121,17 +125,19 @@ class Game{
 		Game.ctx.strokeStyle = "black";
 		Game.ctx.fillRect(500, 0, 10, 500);
 		Game.ctx.lineWidth = 5;
-		Game.ctx.strokeRect(500, 0, 10, 500);
+		// Game.ctx.strokeRect(500, 0, 10, 500);
 
 		//Create player and computer platforms
 
 		Game.ctx.beginPath();
-		Game.ctx.fillStyle = "white";
+		Game.ctx.shadowColor = "lime";
+		Game.ctx.shadowBlur = 15;
+		Game.ctx.fillStyle = "lime";
 		Game.ctx.strokeStyle = "black";
 		Game.ctx.fillRect(this.playerPosX, this.playerPosY, 10, 200);
-		Game.ctx.strokeRect(this.playerPosX, this.playerPosY, 10, 200);
+		// Game.ctx.strokeRect(this.playerPosX, this.playerPosY, 10, 200);
 		Game.ctx.fillRect(this.computerPosX, this.computerPosY, 10, 200);
-		Game.ctx.strokeRect(this.computerPosX, this.computerPosY, 10, 200);
+		// Game.ctx.strokeRect(this.computerPosX, this.computerPosY, 10, 200);
 
 		//Create ball
 		let img = document.querySelector("img")
