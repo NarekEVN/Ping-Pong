@@ -62,7 +62,7 @@ class Game{
 				}
 				if (this.ballX <= 0){
 					this.computerScore++;
-					this.ballX = 505;
+					this.ballX = 200;
 					this.ballY = 250;
 					this.ballMoveY = -Math.random()*8;
 					this.ballMoveX = 10;
@@ -70,7 +70,7 @@ class Game{
 				}
 				if (this.ballX > 990){
 					this.playerScore++;
-					this.ballX = 505;
+					this.ballX = 800;
 					this.ballY = 250;
 					this.ballMoveY = +Math.random()*8;
 					this.ballMoveX = -10;
